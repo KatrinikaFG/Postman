@@ -320,6 +320,24 @@
 							"    pm.expect(+SI_salary_3).to.eql(req_S_salary*3);\r",
 							"});\r",
 							"\r",
+							"// 15. Создать в окружении переменную name\r",
+							"// Environments => New HW => Variable => name_new\r",
+							"\r",
+							"// 16. Создать в окружении переменную age\r",
+							"// Environments => New HW => Variable => age_new\r",
+							"\r",
+							"// 17. Создать в окружении переменную salary\r",
+							"// Environments => New HW => Variable => salary_new\r",
+							"\r",
+							"// 18. Передать в окружение переменную name\r",
+							"pm.environment.set(\"name_new\", salary_increase.name);\r",
+							"\r",
+							"// 19. Передать в окружение переменную age\r",
+							"pm.environment.set(\"age_new\", salary_increase.age);\r",
+							"\r",
+							"// 20. Передать в окружение переменную salary\r",
+							"pm.environment.set(\"salary_new\", salary_increase.salary[0]);\r",
+							"\r",
 							"// 21. Написать цикл который выведет в консоль по порядку элементы списка из параметра salary.\r",
 							"for (i of SI_salary){\r",
 							"    console.log(i)\r",
@@ -338,7 +356,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/object_info_4?name={{name}}&age={{age}}&salary={{salary}}",
+					"raw": "{{url}}/object_info_4?name=Alevtina&age=55&salary=5500",
 					"host": [
 						"{{url}}"
 					],
@@ -348,15 +366,15 @@
 					"query": [
 						{
 							"key": "name",
-							"value": "{{name}}"
+							"value": "Alevtina"
 						},
 						{
 							"key": "age",
-							"value": "{{age}}"
+							"value": "55"
 						},
 						{
 							"key": "salary",
-							"value": "{{salary}}"
+							"value": "5500"
 						}
 					]
 				}
@@ -455,14 +473,17 @@
 							"});\r",
 							"\r",
 							"// 22. ***Написать цикл который выведет в консоль по порядку элементы списка из параметра person.\r",
-							"console.log(Object.values(salary_year.person))\r",
-							"// or\r",
 							"let SP = salary_year.person\r",
+							"console.log(Object.values(SP))\r",
+							"// or\r",
 							"for (let i in SP){\r",
-							"    for ( j of SP.u_name){\r",
-							"        console.log(j)\r",
+							"    if (i == \"u_name\"){\r",
+							"        for ( j of SP.u_name){\r",
+							"        console.log(\"u_name\", j)\r",
+							"        }\r",
+							"    }else{\r",
+							"    console.log( i, SP[i])\r",
 							"    }\r",
-							"    console.log(i, SP[i])\r",
 							"}"
 						],
 						"type": "text/javascript"
@@ -477,17 +498,17 @@
 					"formdata": [
 						{
 							"key": "name",
-							"value": "{{name}}",
+							"value": "{{name_new}}",
 							"type": "text"
 						},
 						{
 							"key": "age",
-							"value": "{{age}}",
+							"value": "{{age_new}}",
 							"type": "text"
 						},
 						{
 							"key": "salary",
-							"value": "{{salary}}",
+							"value": "{{salary_new}}",
 							"type": "text"
 						}
 					]
