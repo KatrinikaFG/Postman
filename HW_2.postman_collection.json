@@ -136,12 +136,6 @@
 							"key": "salary",
 							"value": "{{salary}}",
 							"type": "text"
-						},
-						{
-							"key": "auth_token",
-							"value": "/s34lfgbj/Alex/jjd909/62968kjkWpqc45042519611189202evny",
-							"type": "text",
-							"disabled": true
 						}
 					]
 				},
